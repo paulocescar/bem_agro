@@ -21,4 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/gitsearch', 'GithubController@index');
 Route::get('/githubUser', 'GithubController@searchByUsername');

@@ -22,10 +22,21 @@ class GithubController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function searchByUsername()
+    public function index()
     {
-        $response = Http::get('https://api.github.com/users/paulocescar');
-        return $response;
+        
+        return view('searchGit');
+    }
+
+    public function searchByUsername(Request $request)
+    {
+        $username = $request->input('username');
+        try{
+            $response = Http::get('https://api.github.com/users/'.$username);
+            return $response;
+        }catch(Exception $err){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
         
     }
 }
