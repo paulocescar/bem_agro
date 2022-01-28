@@ -22,4 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/gitsearch', 'GithubController@index');
-Route::get('/githubUser', 'GithubController@searchByUsername');
+Route::post('/githubUser', 'GithubController@searchByUsername');
+Route::post('/githubUserAdd', 'GithubController@searchByUsernameAdd');
+Route::post('/gituserAdd', 'GithubController@addGitUser');
+Route::post('/gituserRemove', 'GithubController@removeGitUser');

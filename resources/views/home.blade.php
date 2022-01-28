@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }}<br>
+                    <a class="btn btn-success p-2" href="/gitsearch">Procurar Githubs</a>
                 </div>
             </div>
         </div>
