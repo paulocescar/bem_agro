@@ -9,8 +9,6 @@ use
 - jQuery
 - AJAX
 
-> BACKEND-CHALLENGE
-
 - [Install](#install)
 - [Use Example](#Usage-example)
 
