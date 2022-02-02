@@ -37,6 +37,12 @@ Change name archive `.env.example` to `.env`.
 
 Create database on mysql and configure in .env file to use.
 
+Run `php artisan migrate` in root folder to create tables in bd.
+
+```sh
+$ php artisan migrate
+```
+
 Run `php artisan serve` in root folder to initialize application.
 
 Link to usage `http://localhost:8000`
