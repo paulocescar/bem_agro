@@ -24,7 +24,7 @@
                         </div>
                         <div class="w-50 d-inline-block">
                             <div class="w-100 d-inline-block">
-                                <b id="">{{$u->username}}</b> 
+                                <b onclick="details('{{$u->git_id}}')" style="cursor: pointer; z-index: 100;">{{$u->username}}</b> 
                             </div>
                             <div class="w-100 d-inline-block">
                                 <a target="_blank" href="{{$u->git_url}}" id="url">{{$u->repositories}} repositórios</a>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="h-100 float-right">
-                            <a class="btn btn-info mt-3" onclick="searchUser('{{$u->git_id}}', '{{$u->username}}')" style="color:white;" data-bs-toggle="collapse" href="#user-collapse-{{$u->git_id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Details</a>
+                            <button class="btn btn-info mt-3" style="display: none" id="a-{{$u->git_id}}" onclick="searchUser('{{$u->git_id}}', '{{$u->username}}')" style="color:white;" data-bs-toggle="collapse" href="#user-collapse-{{$u->git_id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Details</button>
                             <a class="btn btn-danger mt-3" onclick="remove('{{$u->git_id}}')">Remove</a>
                         </div>
 
@@ -56,6 +56,10 @@
     </div>
 </div>
 <script>
+    function details(id){
+        console.log('aqui')
+        $('#a-'+id).click()
+    }
     function removeCollapse(id){
         $('#'+id).removeClass('show');
     }
